@@ -1,76 +1,106 @@
- class jQuery  {
-	  constructor(seletor){
-       let slice = Array.prototype.slice
-       let dom = slice.call(document.querySelectorAll(seletor))
-       let len = dom ? dom.length:0
-       for(let i=0;i<len;i++){
-       	 this[i] = dom[i]
-       }
-       this.length = len
-       this.seletor = seletor || ''
-	  }
-	  append(node){
-
-	  }
-	  addClass(name){
-
-	  }
-	  html(data){
-
-	  }
+ function loadImg(src){
+   let promise = new promise(function(resolve,reject){
+   	  let img = document.creeateElement('img')
+   	  img.onload = function(){
+   	  	resolve(img)
+   	  }
+   	  img.onerror = function(){
+   	  	reject('lose')
+   	  }
+   })
+   return promise
  }
 
- window.$ = function (selector) {  //实例化JQ
- 	//工厂模式
- 	return new jQuery(selector)
- }
+ let  src = 'http://img.zcool.cn/community/01b34f58eee017a8012049efcfaf50.jpg@1280w_1l_2o_100sh.jpg'
+ let  result = loadImg(src)
 
- var $p = $('p')
- console.log($p)
- console.log($p.addClass)
-
-
-
-
-
+result.then(function (img){
+	alert('width'+img.width)
+	return img
+}).then(function (img){
+	alert('height'+img.height)
+}).catch(function(ex){
+	alert(ex)
+})
 
 
 
 
+ // class jQuery  {
+	//   constructor(seletor){
+ //       let slice = Array.prototype.slice
+ //       let dom = slice.call(document.querySelectorAll(seletor))
+ //       let len = dom ? dom.length:0
+ //       for(let i=0;i<len;i++){
+ //       	 this[i] = dom[i]
+ //       }
+ //       this.length = len
+ //       this.seletor = seletor || ''
+	//   }
+	//   append(node){
+
+	//   }
+	//   addClass(name){
+
+	//   }
+	//   html(data){
+
+	//   }
+ // }
+
+ // window.$ = function (selector) {  //实例化JQ
+ // 	//工厂模式
+ // 	return new jQuery(selector)
+ // }
+
+ // var $p = $('p')
+ // console.log($p)
+ // console.log($p.addClass)
 
 
 
 
-
-
-
-
-
+// class House{
+// 	constructor(house){
+// 		this.house = house  
+// 	}
+// }
 // class People{
-// 	constructor(name){
+// 	constructor(name,house){
 // 		this.name = name
+// 		this.house = house
+// 	}
+// 	saySomething(){
+
+
 // 	}
 // }
 // class A extends People{
-// 	constructor(name){
-// 		super(name)
+// 	constructor(name,house){
+// 		super(name,house)
 // 	}
 // 	saySomething(){
-// 		alert('i an a')
+// 		alert('i am a')
 // 	}
 // }
 // class B extends People{
-// 	constructor(name){
-// 		super(name)
+// 	constructor(name,house){
+// 		super(name,house)
 // 	}
 // 	saySomething(){
 // 		alert('i am b')
 // 	}
 // }
-// let a = new A('a')
+
+// let aHouse = new House('beijing')
+// let a = new A('a',aHouse)
 // a.saySomething()
 // let b = new B('b')
 // b.saySomething()
+
+
+
+
 
 
 
