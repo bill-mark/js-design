@@ -1,23 +1,34 @@
  function loadImg(src){
-   let promise = new promise(function(resolve,reject){
-   	  let img = document.creeateElement('img')
+   console.log('loadImg')
+   let promise = new Promise(function(resolve,reject){
+   	  let img = document.createElement('img')
+   	  console.log('next img')
+   	  console.log(img)  
    	  img.onload = function(){
+   	  	console.log('resolve')
    	  	resolve(img)
    	  }
    	  img.onerror = function(){
+   	  	console.log('onerror')
    	  	reject('lose')
    	  }
+   	  img.src = src
    })
+   console.log('return promise')
+   console.log(promise)
    return promise
  }
 
- let  src = 'http://img.zcool.cn/community/01b34f58eee017a8012049efcfaf50.jpg@1280w_1l_2o_100sh.jpg'
+ let src = 'https://img2.mukewang.com/5a9fc8070001a82402060220-100-100.jpg'
+ console.log('next result')
  let  result = loadImg(src)
 
 result.then(function (img){
+	console.log('then1') 
 	alert('width'+img.width)
 	return img
 }).then(function (img){
+	console.log('then2')
 	alert('height'+img.height)
 }).catch(function(ex){
 	alert(ex)
