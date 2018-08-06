@@ -1,38 +1,91 @@
- function loadImg(src){
-   console.log('loadImg')
-   let promise = new Promise(function(resolve,reject){
-   	  let img = document.createElement('img')
-   	  console.log('next img')
-   	  console.log(img)  
-   	  img.onload = function(){
-   	  	console.log('resolve')
-   	  	resolve(img)
-   	  }
-   	  img.onerror = function(){
-   	  	console.log('onerror')
-   	  	reject('lose')
-   	  }
-   	  img.src = src
-   })
-   console.log('return promise')
-   console.log(promise)
-   return promise
- }
+//停车场问题
 
- let src = 'https://img2.mukewang.com/5a9fc8070001a82402060220-100-100.jpg'
- console.log('next result')
- let  result = loadImg(src)
 
-result.then(function (img){
-	console.log('then1') 
-	alert('width'+img.width)
-	return img
-}).then(function (img){
-	console.log('then2')
-	alert('height'+img.height)
-}).catch(function(ex){
-	alert(ex)
-})
+
+
+
+
+
+
+
+
+
+
+//快车慢车问题
+// class Car{
+// 	constructor(number,name){
+// 		this.number = number
+// 		this.name = name
+// 	}
+// }
+// class Kuaiche extends Car{
+//     constructor(number,name){ 
+//     	super(number,name)
+//     	this.price = 1
+//     }
+// }
+// class Zhuanche extends Car{
+// 	constructor(number,name){
+// 		super(number,name)
+// 		this.price = 2
+// 	}
+// }
+// class Trip{
+// 	constructor(car){
+// 		this.car = car
+// 	}
+// 	start(){
+// 		console.log('start  car name is '+this.car.name+' car number is'+this.car.number)
+// 	}
+// 	end(){
+// 		console.log('end price is '+this.car.price*5)
+// 	}
+// }
+// let car = new Zhuanche(1002233,'bmw')
+// let trip = new Trip(car)
+// trip.start()
+// trip.end()
+
+
+
+
+//  function loadImg(src){
+//    console.log('loadImg')
+//    let promise = new Promise(function(resolve,reject){
+//    	  let img = document.createElement('img')
+//    	  console.log('next img')
+//    	  console.log(img)
+//    	  console.log('next img2')
+//    	  img.onload = function(){
+//    	  	console.log('resolve')
+//    	  	resolve(img)
+//    	  }
+//    	  img.onerror = function(){
+//    	  	console.log('onerror')
+//    	  	reject('lose')
+//    	  }
+//    	  img.src = src
+//    })
+//    console.log('return promise') 
+//    console.log(promise)
+//    return promise
+//  }
+
+//  let src = 'https://img2.mukewang.com/5a9fc8070001a82402060220-100-100.jpg'
+//  console.log('next result')
+//  let  result = loadImg(src)
+
+// result.then(function (img){
+// 	console.log('then1') 
+// 	//alert('width'+img.width)  //单一职责原则,只干一件事
+// 	return img
+// }).then(function (img){
+// 	console.log('then2')
+// 	//alert('height'+img.height) //单一职责原则,只干一件事
+// }).catch(function(ex){
+// 	alert(ex)
+// })
+
 
 
 
