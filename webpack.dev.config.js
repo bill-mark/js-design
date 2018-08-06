@@ -8,13 +8,13 @@
  		filename:'./release/bundle.js'  //release 会自动创建
  	},
 
- 	module:{
-       rules:[{
-       	  test:/\.js?$/,
-       	  exclude:/(node_modules)/,
-          loader:'babel-loader'
-       }]
- 	},
+ 	// module:{
+  //      rules:[{
+  //      	  test:/\.js?$/,
+  //      	  exclude:/(node_modules)/,
+  //         loader:'babel-loader'
+  //      }]
+ 	// },
 
  	plugins:[
        new HtmlWebpackPlugin({
